@@ -4,6 +4,7 @@ import "./Convertiflie.css";
 const FileFlex = () => {
   const [selectedFile, setSelectedFile] = useState(null);
   const [isConverted, setIsConverted] = useState(false);
+  const [selectedFormat, setSelectedFormat] = useState("png");
 
   const handleClick = () => {
     document.getElementById("fileInput").click();
@@ -22,6 +23,25 @@ const FileFlex = () => {
     setTimeout(() => {
       setIsConverted(true);
     }, 1000);
+  };
+
+  const handleFormatChange = (event) => {
+    setSelectedFormat(event.target.value);
+  };
+
+  const handleDownload = () => {
+    const url = URL.createObjectURL(selectedFile);
+    const a = document.createElement("a");
+    a.href = url;
+    const fileNameWithoutExtension = selectedFile.name
+      .split(".")
+      .slice(0, -1)
+      .join(".");
+    a.download = `${fileNameWithoutExtension}.${selectedFormat}`;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
   };
 
   return (
@@ -46,10 +66,23 @@ const FileFlex = () => {
             <span className="file-size">
               {(selectedFile.size / 1024).toFixed(2)} KB
             </span>
-            <select className="file-format">
+            <select
+              className="file-format"
+              value={selectedFormat}
+              onChange={handleFormatChange}
+            >
               <option value="png">PNG</option>
               <option value="jpg">JPG</option>
-              <option value="pdf">PDF</option>
+              <option value="bmp">BMP</option>
+              <option value="ico">ICO</option>
+              <option value="tiff">TIFF</option>
+              <option value="raw">RAW</option>
+              <option value="jpeg">JPEG</option>
+              <option value="gif">GIF</option>
+              <option value="webp">WEBP</option>
+              <option value="tif">TIF</option>
+              <option value="svg">SVG</option>
+              <option value="tga">TGA</option>
               {/* Add more options as needed */}
             </select>
             <button
@@ -65,7 +98,9 @@ const FileFlex = () => {
             </button>
           ) : (
             <>
-              <button className="download-button">Download</button>
+              <button className="download-button" onClick={handleDownload}>
+                Download
+              </button>
               <button
                 className="convert-another-button"
                 onClick={() => setSelectedFile(null)}
