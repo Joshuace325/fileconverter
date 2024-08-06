@@ -48,11 +48,9 @@ const FileFlex = () => {
     <div className="container">
       <h1 className="title">Free Unlimited File Converter</h1>
       <p className="description">
-        Convertiflie your go-to online tool for unlimited and free multimedia
-        conversion, all processed locally on your device for enhanced privacy
-        and security. Easily convert images, audio, and videos without any
-        restrictions. Start converting now and streamline your content
-        effortlessly with FileFlex!
+        Easily convert images, audio, and videos without any restrictions. Start
+        converting now and streamline your content effortlessly with
+        Convertiflie!
       </p>
       {selectedFile ? (
         <div className="file-info">
