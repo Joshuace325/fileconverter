@@ -1,0 +1,96 @@
+/* Convertiflie.css */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #121212;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+.title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.description {
+  max-width: 600px;
+  margin-bottom: 2rem;
+  line-height: 1.5;
+}
+
+.upload-container {
+  width: 300px;
+  height: 200px;
+  border: 2px dashed #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.upload-text {
+  font-size: 1rem;
+}
+
+.file-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
+  max-width: 600px;
+  background-color: #1e1e1e;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.file-details {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.file-icon {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+}
+
+.file-name {
+  flex-grow: 1;
+}
+
+.file-size {
+  margin-left: 10px;
+  margin-right: 20px;
+}
+
+.file-format {
+  margin-right: 20px;
+}
+
+.remove-file {
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+
+.convert-button,
+.download-button,
+.convert-another-button {
+  background-color: #666;
+  border: none;
+  color: #fff;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
