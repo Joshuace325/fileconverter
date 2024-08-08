@@ -10,6 +10,8 @@
   color: #fff;
   font-family: Arial, sans-serif;
   text-align: center;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
 .title {
@@ -24,7 +26,8 @@
 }
 
 .upload-container {
-  width: 600px;
+  width: 100%;
+  max-width: 600px;
   height: 300px;
   border: 2px dashed #a5a5a5;
   display: flex;
@@ -32,7 +35,9 @@
   border-radius: 5%;
   justify-content: center;
   cursor: pointer;
-  margin-top: 100px;
+  margin-top: 20px;
+  box-sizing: border-box;
+  padding: 20px;
 }
 
 .upload-text {
@@ -43,11 +48,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 80%;
+  width: 100%;
   max-width: 600px;
   background-color: #1e1e1e;
   padding: 20px;
   border-radius: 10px;
+  box-sizing: border-box;
 }
 
 .file-details {
@@ -56,6 +62,7 @@
   justify-content: space-between;
   width: 100%;
   margin-bottom: 20px;
+  flex-wrap: wrap;
 }
 
 .file-icon {
@@ -66,6 +73,7 @@
 
 .file-name {
   flex-grow: 1;
+  word-break: break-word;
 }
 
 .file-size {
@@ -95,4 +103,54 @@
   cursor: pointer;
   border-radius: 5px;
   margin-bottom: 10px;
+}
+
+/* Media Queries for Responsive Design */
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .description {
+    font-size: 1rem;
+  }
+
+  .upload-container {
+    width: 90%;
+    height: 250px;
+  }
+
+  .file-info {
+    width: 90%;
+  }
+
+  .file-details {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .file-format {
+    margin: 10px 0;
+  }
+
+  .convert-button,
+  .download-button,
+  .convert-another-button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 1.2rem;
+  }
+
+  .description {
+    font-size: 0.9rem;
+  }
+
+  .upload-container {
+    height: 200px;
+  }
 }
